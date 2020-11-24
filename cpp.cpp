@@ -1,33 +1,61 @@
 #include<iostream>
-#include<math.h>
-
 using namespace std;
 
-int main(){
-
-    int number=2545;
-    int count=12;
-
-    while (count--)
+int linear(int arr[] , int n , int find){
+    for (int i = 0; i < n; i++)
     {
-        int ch=pow(2,count);
-        if (number>=ch)
+        if (find==arr[i])
         {
-            cout<<1;
-            //cout<<ch<<endl;
-            number=number-ch;
+            return i;
         }
+    }
+    return -1;
+}
+
+int binary(int arr[] , int n , int find){
+    int s=0,e=n;
+    while (s<=e)
+    {   
+        int mid=(s+e)/2;
+        if (arr[mid]==find)
+        {
+            return mid;
+        }
+
+        else if (arr[mid]>find)
+        {
+            e=mid-1;
+        }
+
         else
         {
-            cout<<0;
+            s=mid+1;
         }
-        
     }
-    cout<<endl<<number;
     
-    
-       
+}
+
+int* input_arr(int arr[],int n){
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
+    return arr;
+}
+
+void print_arr(int arr[] , int n){
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
 
 
+int main(){
+    
+    int att[10];
+    input_arr(att,10);
+    //print_arr(att,10);
+    cout<<binary(att,10,3);
     return 0;
 }

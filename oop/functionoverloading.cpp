@@ -47,9 +47,9 @@ public:
 
 int main(){
 	Area a;
-	cout<<a.circle('c',4.28)<<" units"<<endl; // r radius , d diameter , c circumference
-	cout<<a.rec(2,5)<<" units"<<endl;
-	cout<<a.triangle(1,2,3)<<" units"<<endl;
-	cout<<a.triangle(1)<<" units"<<endl;
+	cout<<"area of circle is "<<a.circle('c',4.28)<<" units"<<endl; // r radius , d diameter , c circumference
+	cout<<"area of rectriangle "<<a.rec(2,5)<<" units"<<endl;
+	cout<<"area of triangle "<<a.triangle(1,2,3)<<" units"<<endl;
+	cout<<"area of triangle "<<a.triangle(1)<<" units"<<endl;
 	return 0;
 }

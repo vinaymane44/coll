@@ -2,9 +2,9 @@
 using namespace std;
 
 void inter(int *c,int q,int *b,int s){      // intersection
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < q; i++)
     {
-        for (int a = 0; a < 10; a++)
+        for (int a = 0; a < s; a++)
         {
             if(c[a]==b[i]){
                 cout<< c[a]<<" ";
@@ -86,8 +86,13 @@ int main(){
     }
     cout<<endl;
     
+    cout<<"union is ";
     unio(a,n1,b,n2);
-    
+    cout<<endl;
+
+    cout<<"intersecction is ";
+    inter(a,n1,b,n2);
+    cout<<endl;
 
     return 0;
 }

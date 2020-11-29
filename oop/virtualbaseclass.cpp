@@ -1,75 +1,47 @@
+#include<iostream>
+#include<string>
+using namespace std;
 
-#include <iostream>
-#include <string> 
-using namespace std; 
-  
-class vechial { 
-public: 
+class Person{
+public:
     string name;
-    float cost;
+    int age;
 
-    void set_cost(float a){
-        cost=a;
-    } 
-    void set_name(string a){
-        name=a;
+    void bio(){
+        cout<<"name of person - "<<name<<endl;
+        cout<<"age of person  - "<<age<<endl;
     }
-}; 
-  
-class petrol_vechial : public virtual vechial { 
+};
+
+class Student : public virtual Person {
 public:
-    float p_kmpl;
-    
+    string study_at;
+};
 
-    void info(){
-        cout<<"name -"<<name<<endl;
-        cout<<"cost -"<<cost<<endl;
-        cout<<p_kmpl<<" on pet"<<endl;
-    }
-    void set_pkmpl(float z){
-        p_kmpl=z;
-    }
-    
-
-}; 
-  
-class cng_vechial : public virtual vechial {
-public: 
-    float c_kmpl;
-
-    void info(){
-        cout<<"name -"<<name<<endl;
-        cout<<"cost -"<<cost<<endl;
-        cout<<c_kmpl<<" on cng"<<endl;
-    }
-    void set_ckmpl(float z){
-        c_kmpl=z;
-    }
-    
-}; 
-  
-class multifuel_vechial : public petrol_vechial, public cng_vechial { 
+class Employe : public virtual Person {
 public:
+    string work_at;
+};
 
-    multifuel_vechial(string v,float c ,float p , float g){
-        name=v;
-        cost=c;
-        p_kmpl=p;
-        c_kmpl=g;
-    }
-     
+class Part_time : public Student , public Employe {
+public:
     void info(){
-        cout<<"Name- "<<name<<endl;
-        cout<<"Cost- "<<cost<<"L"<<endl;
-        cout<<p_kmpl<<" on pet"<<endl;
-        cout<<c_kmpl<<" on cng"<<endl;
+        cout<<"name of part-timer - "<<name<<endl;
+        cout<<"he study at "<<study_at<<endl;
+        cout<<"he work at "<<work_at<<endl<<endl;
     }
-}; 
-  
-int main() 
-{ 
-    multifuel_vechial v1("fdf",3,4,5);
-    v1.info(); 
-  
-    return 0; 
-} 
+};
+
+int main(){
+    Part_time p;
+    p.name="Harry";
+    p.work_at="Fiverr";
+    p.study_at="Hogwarts";
+    p.age=23;
+
+    p.bio();
+    cout<<endl;
+    p.info();
+
+    return 0;
+}

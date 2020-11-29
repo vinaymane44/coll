@@ -1,61 +1,44 @@
-#include<iostream>
+#include <iostream>
+#include <string>
+#include <sstream>
 using namespace std;
+void get_f(float* f)
+{
+    try {
+	stringstream str;
+    string s;
+	cin>>s;
+	
+	if (s=="0")
+	{
+		//cout<<0<<endl;
+		*f=0;
+	}
+	 
+    str << s; 
+	float x; 
+	str >> x;
+    //cout<<"Converted value of character 5 :"<<x;
 
-int linear(int arr[] , int n , int find){
-    for (int i = 0; i < n; i++)
-    {
-        if (find==arr[i])
-        {
-            return i;
-        }
-    }
-    return -1;
+	if (x==0)
+	{
+		//cout<<"not number\n";
+		throw(0);
+	}
+	*f = x;
+	}
+
+	catch(int n){
+		cout<<"not a number retry - ";
+		get_f(f);
+	}
 }
-
-int binary(int arr[] , int n , int find){
-    int s=0,e=n;
-    while (s<=e)
-    {   
-        int mid=(s+e)/2;
-        if (arr[mid]==find)
-        {
-            return mid;
-        }
-
-        else if (arr[mid]>find)
-        {
-            e=mid-1;
-        }
-
-        else
-        {
-            s=mid+1;
-        }
-    }
-    
-}
-
-int* input_arr(int arr[],int n){
-    for (int i = 0; i < n; i++)
-    {
-        cin>>arr[i];
-    }
-    return arr;
-}
-
-void print_arr(int arr[] , int n){
-    for (int i = 0; i < n; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-}
-
 
 int main(){
-    
-    int att[10];
-    input_arr(att,10);
-    //print_arr(att,10);
-    cout<<binary(att,10,3);
-    return 0;
+	float z,x;
+	float *a=&z;
+	float *b=&x;
+	get_f(a);
+	get_f(b);
+	cout<<z<<"  "<<x;
 }

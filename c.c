@@ -1,18 +1,30 @@
-#include<conio.h>
-using namespace std;
+#include<stdio.h>
+#include<string.h>
 
-typedef struct node
-{
-	int data;
-	struct node* next;
-}node;
- 
- int main(){
+int lis[200];
+int i=0;
 
-	 int n = 0;
-	 node * HEAD = NULL;
-	 printf("\nHow many nodes");
-	 scanf("%d",&n);
+void push(int a){
+	if(i<200){
+		lis[i++]=a;
+	}
+}
 
-	 return 0;
- }
+void pop(){
+	if(i>0){
+		printf("%d\n",lis[--i]);	
+	}
+}
+
+int main(){
+	char j[10];
+	while (1)
+	{
+		//scanf("%s",j);
+		*j="break";
+		printf("%d",j=="break");
+	}
+	
+	
+	return 0;
+};

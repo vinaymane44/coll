@@ -1,16 +1,21 @@
-def extract():
-    lis=[]
-    for i in range(623):
-        a=input()
-        if(a[-3:-1]=="xx"):
-            #lis.append(a[:-2])
-            lis.append(a[0:-3])
-    
-    print(lis)
+def countSetBits(n): 
+    count = 0
+    while (n): 
+        count += n & 1
+        n >>= 1
+    return count
 
-def pri(l):
-    for i in l:
-        print(i)
+no=int(input())
 
-
-extract()   
+for i in range(no):
+    i=int(input())
+    ch=1;
+    for r in range(1,i):
+        j=countSetBits(r);
+        
+        if r+j==i:
+            print("Colleges will not open")
+            break
+            ch=0;
+    if ch==1:
+        print("Colleges will open")

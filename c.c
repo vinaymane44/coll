@@ -24,7 +24,5 @@ int main(){
 		*j="break";
 		printf("%d",j=="break");
 	}
-	
-	
 	return 0;
 };
